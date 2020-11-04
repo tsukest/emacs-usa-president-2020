@@ -19,7 +19,7 @@
   :risky t
   :group 'usa-president-2020)
 
-(defcustom usa-president-update-interval 60
+(defcustom usa-president-2020-update-interval 60
   "Seconds after which the electoral votes will be updated."
   :type 'integer
   :group 'usa-president-2020)
