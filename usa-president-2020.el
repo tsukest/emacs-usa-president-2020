@@ -24,6 +24,7 @@
   :type 'integer
   :group 'usa-president-2020)
 
+(defvar usa-president-2020-url "https://www.huffpost.com/elections/president.json")
 (defvar usa-president-2020-update-timer nil)
 (defvar usa-president-2020-biden-votes nil)
 (defvar usa-president-2020-trump-votes nil)
@@ -32,7 +33,7 @@
   "Indicate USA President 2020."
   (interactive)
   (request
-    "https://www.huffpost.com/elections/president.json"
+    usa-president-2020-url
     :parser 'json-read
     :success (cl-function
               (lambda (&key data &allow-other-keys)
@@ -67,10 +68,10 @@
   "Update usa-president-2020-mode-line."
   (when usa-president-2020-mode
     (request
-    "https://www.huffpost.com/elections/president.json"
-    :parser 'json-read
-    :timeout 5
-    :complete #'usa-president-2020-update-callback)))
+      usa-president-2020-url
+      :parser 'json-read
+      :timeout 5
+      :complete #'usa-president-2020-update-callback)))
 
 ;;;###autoload
 (define-minor-mode usa-president-2020-mode
