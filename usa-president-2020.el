@@ -71,7 +71,7 @@
       usa-president-2020-url
       :parser 'json-read
       :timeout 5
-      :complete #'usa-president-2020-update-callback)))
+      :success #'usa-president-2020-update-callback)))
 
 ;;;###autoload
 (define-minor-mode usa-president-2020-mode
