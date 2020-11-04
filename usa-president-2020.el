@@ -62,7 +62,7 @@
     (force-mode-line-update t))
   (when usa-president-2020-mode
     (setq usa-president-2020-update-timer
-          (run-at-time usa-president-update-interval nil #'usa-president-2020-update))))
+          (run-at-time usa-president-2020-update-interval nil #'usa-president-2020-update))))
 
 (defun usa-president-2020-update ()
   "Update usa-president-2020-mode-line."
