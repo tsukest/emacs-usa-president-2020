@@ -35,6 +35,7 @@
   (request
     usa-president-2020-url
     :parser 'json-read
+    :timeout 5
     :success (cl-function
               (lambda (&key data &allow-other-keys)
                 (let* ((wins (assoc-default
@@ -58,7 +59,6 @@
          (trump-votes (assoc-default 'gop wins)))
     (setq usa-president-2020-biden-votes biden-votes
           usa-president-2020-trump-votes trump-votes)
-    (message "usa-president-2020 updated.")
     (force-mode-line-update t))
   (when usa-president-2020-mode
     (setq usa-president-2020-update-timer
